@@ -30,9 +30,10 @@ include "koneksi.php";
   <link rel="stylesheet" href="assets/css/adminlte.min.css">
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/css/solid.min.css">
-  
+
   <!-- JavaScript -->
   <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/swal.min.js"></script>
   <script src="assets/js/jquery.dataTables.min.js"></script>
   <script src="assets/js/dataTables.rowsGroup.js"></script>
   <script src="assets/js/dataTables.bootstrap5.min.js"></script>
@@ -53,34 +54,34 @@ include "koneksi.php";
           <a href="index.php" class="nav-link">Home</a>
         </li>
       </ul>
-  
+
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a href="logout.php" class="nav-link">Logout</a>
         </li>
       </ul>
-		</nav>
-		
+    </nav>
+
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-  
+
       <a href="#" class="brand-link">
         <img src="./assets/img/desalogo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Aplikasi Pembayaran SPP</span>
       </a>
-  
+
       <div class="sidebar">
-  
+
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-  
+
             <li class="nav-item">
               <a href="index.php" class="nav-link">
                 <i class="far fas fa-home nav-icon"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-  
+
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-database"></i>
@@ -115,9 +116,9 @@ include "koneksi.php";
                   </a>
                 </li>
               </ul>
-						</li>
-						
-						<li class="nav-item has-treeview">
+            </li>
+
+            <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-shopping-cart"></i>
                 <p>
@@ -133,21 +134,28 @@ include "koneksi.php";
                   </a>
                 </li>
               </ul>
-						</li>
-						
-						<li class="nav-item">
+            </li>
+
+            <li class="nav-item">
+              <a href="tabungan.php" class="nav-link">
+                <i class="far fas fa-book nav-icon"></i>
+                <p>Tabungan</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="laporan.php" class="nav-link">
                 <i class="far fas fa-chart-bar nav-icon"></i>
                 <p>Laporan</p>
               </a>
             </li>
-  
+
           </ul>
         </nav>
-  
+
       </div>
-  
+
     </aside>
-	</div>
-	
-	<div class="content-wrapper">
+  </div>
+
+  <div class="content-wrapper">
