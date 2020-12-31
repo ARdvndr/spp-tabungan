@@ -133,14 +133,13 @@ include "koneksi.php";
                     <p>Pembayaran SPP</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="tabungan.php" class="nav-link">
+                    <i class="far fas fa-book nav-icon"></i>
+                    <p>Tabungan</p>
+                  </a>
+                </li>
               </ul>
-            </li>
-
-            <li class="nav-item">
-              <a href="tabungan.php" class="nav-link">
-                <i class="far fas fa-book nav-icon"></i>
-                <p>Tabungan</p>
-              </a>
             </li>
 
             <li class="nav-item">

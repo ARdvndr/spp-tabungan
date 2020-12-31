@@ -16,58 +16,97 @@
   </div>
 </section>
 
-<?php
-$tab_pills = [
-  0 => array(
-    "href" => "tambah",
-    "name" => "Tambah Tabungan",
-    "content" => "tabungan_in.php",
-  ),
-  1 => array(
-    "href" => "ambil",
-    "name" => "Ambil Tabungan",
-    "content" => "tabungan_out.php",
-  ),
-];
-?>
-
 <section class="content">
   <div class="container-fluid">
-    <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
-      <?php
-      foreach ($tab_pills as $tp) {
-        echo "
-          <li class='nav-item' role='presentation'>
-          <a
-            class='nav-link " . ($tp['href'] === 'tambah' ? 'active' : '') . "'
-            id='pills-$tp[href]-tab'
-            data-bs-toggle='pill'
-            href='#pills-$tp[href]'
-            role='tab'
-            aria-controls='pills-$tp[href]'
-            aria-selected='true'
-          >
-          $tp[name]
-          </a>
-        </li>";
-      }
-      ?>
-    </ul>
 
-    <div class="tab-content" id="pills-tabContent">
-      <?php
-      foreach ($tab_pills as $content) {
-        echo "
-        <div
-          class='tab-pane fade show " . ($content['href'] === 'tambah' ? 'active' : '') . "'
-          id='pills-$content[href]'
-          role='tabpanel'
-            aria-labelledby='pills-$content[href]-tab'
-          >";
-        include $content['content'];
-        echo "</div>";
-      }
-      ?>
+    <div class="d-flex justify-content-between align-items-start">
+
+      <div>
+        <div class="card mb-3" style="width: 25rem;">
+          <div class="card-header d-flex justify-content-between">
+            <h3 class="col-md-6">Biodata Siswa</h3>
+            <a class="col-md-4 btn btn-primary text-light" data-bs-toggle='modal' data-bs-target='#cari_siswa'>
+              <i class="fas fa fa-search"></i> Cari Siswa
+            </a>
+            <button class="btn btn-danger" style="display: none;" id="remove">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <div class="card-body">
+            <table class="table table-sm table-borderless" id="biodata_siswa"></table>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 60%;">
+        <div class="card mb-3" style="width: 100%;">
+          <div class="card-header d-flex justify-content-between">
+            <h3 class="col-auto">Riwayat Tabungan Siswa</h3>
+            <button
+              class="btn btn-success btn-sm"
+              style="display: none;"
+              id="tambah_tabungan"
+              data-bs-toggle='modal'
+              data-bs-target='#modal_tambah'
+            >
+              Tambah tabungan
+            </button>
+
+            <button
+              class="btn btn-warning btn-sm"
+              style="display: none;"
+              id="ambil_tabungan"
+              data-bs-toggle='modal'
+              data-bs-target='#modal_ambil'
+            >
+              Ambil Tabungan
+            </button>
+          </div>
+
+          <div class="card-body">
+            <label id="saldo" style="display: none;"></label>
+
+            <div class="d-flex justify-content-between align-items-start" id="rincian_tabungan">
+
+              <div style="display: none; width:48%; " id="tbl_in">
+                <label>Detail Menabungan</label>
+                <div style="height: 250px;overflow-y: auto;">
+                  <table class="table table-sm table-bordered" style="font-size: 14px;">
+                    <thead class="bg-secondary">
+                      <tr>
+                        <th class="sticky-top bg-secondary">No</th>
+                        <th class="sticky-top bg-secondary">Nominal Tabungan</th>
+                        <th class="sticky-top bg-secondary">Tanggal Menabung</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tabungan_in"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div style="display: none; width: 48%;" id="tbl_out">
+                <label>Detail Ambil Tabungan</label>
+                <div style="height: 250px; overflow-y: auto;">
+                  <table class="table table-sm table-bordered" style="font-size: 14px;">
+                    <thead class="bg-secondary">
+                      <tr>
+                        <th class="sticky-top bg-secondary">No</th>
+                        <th class="sticky-top bg-secondary">Nominal Penarikan</th>
+                        <th class="sticky-top bg-secondary">Tanggal Penarikan</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tabungan_out"></tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -81,9 +120,9 @@ include "footer.php";
 <?php if (!empty($_SESSION['temp_alert'])) { ?>
   <script>
     <?php if ($_SESSION['temp_alert']['stats'] === "success") { ?>
-      swal('Berhasil', '<?= $_SESSION['temp_alert']['msg']; ?>'.replace(/\\n/g,"\n"), 'success');
+      swal('Berhasil', '<?= $_SESSION['temp_alert']['msg']; ?>'.replace(/\\n/g, "\n"), 'success');
     <?php } else { ?>
-      swal('Kesalahan', '<?= $_SESSION['temp_alert']['msg']; ?>'.replace(/\\n/g,"\n"), 'error');
+      swal('Kesalahan', '<?= $_SESSION['temp_alert']['msg']; ?>'.replace(/\\n/g, "\n"), 'error');
     <?php } ?>
 
     setInterval(() => {
