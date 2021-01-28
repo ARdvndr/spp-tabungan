@@ -67,7 +67,7 @@ include "koneksi.php";
 
       <a href="#" class="brand-link">
         <img src="./assets/img/desalogo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Aplikasi Pembayaran SPP</span>
+        <span class="brand-text font-weight-light">SPP DESA</span>
       </a>
 
       <div class="sidebar">
@@ -91,12 +91,6 @@ include "koneksi.php";
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="tampil_guru.php" class="nav-link">
-                    <i class="fas fa-circle nav-icon"></i>
-                    <p>Data Guru</p>
-                  </a>
-                </li>
                 <li class="nav-item">
                   <a href="tampil_walikelas.php" class="nav-link">
                     <i class="fas fa-circle nav-icon"></i>

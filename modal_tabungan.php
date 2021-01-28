@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 $kelas = $konek->query("SELECT kelas FROM walikelas")->fetch_all();
-$siswa = $konek->query("SELECT * FROM siswa")->fetch_all();
+$siswa = $konek->query("SELECT * FROM siswa JOIN tajar ON siswa.tahunajaran=tajar.idtahunajaran")->fetch_all();
 ?>
 <div id="DOM" style="display: none;">
   <?php
@@ -14,7 +14,7 @@ $siswa = $konek->query("SELECT * FROM siswa")->fetch_all();
       "nis" => $s[1],
       "nama" => $s[2],
       "kelas" => $s[3],
-      "tajar" => $s[4],
+      "tajar" => $s[7],
     );
   }
   echo json_encode($data);
@@ -292,8 +292,10 @@ $siswa = $konek->query("SELECT * FROM siswa")->fetch_all();
 
     $("#biodata_siswa").html(tableData);
     $("#remove").show();
+    $("#cetak").show();
     $("#tambah_tabungan").show();
     $("#ambil_tabungan").show();
+    $("#nis").val(data.nis);
     getLastSaldo(data.id);
   }
 </script>

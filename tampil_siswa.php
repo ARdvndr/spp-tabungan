@@ -36,7 +36,7 @@
           </tr>
 
           <?php
-          $sql = mysqli_query($konek, "select * from siswa order by kelas asc");
+          $sql = mysqli_query($konek, "select * from siswa left join tajar on siswa.tahunajaran=tajar.idtahunajaran order by kelas asc");
           $no = 1;
           while ($d = mysqli_fetch_array($sql)) {
             echo "<tr>

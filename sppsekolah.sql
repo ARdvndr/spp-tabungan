@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 09:23 AM
+-- Generation Time: Jan 05, 2021 at 12:33 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -62,15 +62,10 @@ CREATE TABLE `bayar` (
 --
 
 INSERT INTO `bayar` (`idbayar`, `idspp`, `nobayar`, `tglbayar`, `jumlah_bayar`) VALUES
-(6, 3, 2012140002, '2020-12-14', 100000),
-(7, 3, 2012140003, '2020-12-14', 100000),
-(8, 4, 2012140004, '2020-12-14', 125000),
-(10, 13, 2012140006, '2020-12-14', 100000),
-(12, 2, 2012150002, '2020-12-15', 25000),
-(14, 3, 2012150003, '2020-12-15', 50000),
-(15, 2, 2012150004, '2020-12-15', 75000),
-(18, 13, 2012150005, '2020-12-15', 100000),
-(19, 13, 2012150006, '2020-12-15', 150000);
+(22, 73, 2101050001, '2021-01-05', 100000),
+(24, 73, 2101050002, '2021-01-05', 250000),
+(25, 74, 2101050003, '2021-01-05', 200000),
+(26, 85, 2101050004, '2021-01-05', 100000);
 
 -- --------------------------------------------------------
 
@@ -108,7 +103,7 @@ CREATE TABLE `siswa` (
   `nis` varchar(10) DEFAULT NULL,
   `namasiswa` varchar(40) DEFAULT NULL,
   `kelas` varchar(10) DEFAULT NULL,
-  `tahunajaran` varchar(16) DEFAULT NULL,
+  `tahunajaran` int(10) DEFAULT NULL,
   `biaya` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -117,13 +112,9 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`idsiswa`, `nis`, `namasiswa`, `kelas`, `tahunajaran`, `biaya`) VALUES
-(8, '2017100001', 'Eka Suryani S', 'VIIA', '2017/2018', 250000),
-(9, '2017100002', 'BAMBANG GENTOLET', 'VIIA', '2017/2018', 250000),
-(10, '2017100003', 'HANGGARA', 'VIIA', '2017/2018', 250000),
-(12, '16080001', 'Nuura Safira', 'IXA', '2017/2018', 250000),
-(15, '16080003', 'Kepin', 'IXA', '2017/2018', 250000),
-(16, '16080002', 'Ameng', 'IXB', '2020/2021 Ganjil', 350000),
-(20, '16080004', 'ABC', 'IXC', '2020/2021 Ganjil', 350000);
+(21, '2021010001', 'ABC', 'IXA', 1, 350000),
+(22, '2021010002', 'DEF', 'IXA', 1, 350000),
+(23, '2021010003', 'ABCD', 'IXA', 1, 350000);
 
 -- --------------------------------------------------------
 
@@ -147,42 +138,42 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`idspp`, `idsiswa`, `jatuhtempo`, `bulan`, `jumlah`, `tunggakan`, `ket`, `idadmin`) VALUES
-(1, 15, '2017-07-10', 'Juli 2017', 250000, 250000, 'LUNAS', 1),
-(2, 15, '2017-08-10', 'Agustus 2017', 250000, 150000, 'BELUM LUNAS', 1),
-(3, 15, '2017-09-10', 'September 2017', 250000, 0, 'LUNAS', NULL),
-(4, 15, '2017-10-10', 'Oktober 2017', 600000, 125000, 'BELUM LUNAS', NULL),
-(5, 15, '2017-11-10', 'November 2017', 250000, 250000, 'BELUM LUNAS', NULL),
-(6, 15, '2017-12-10', 'Desember 2017', 250000, 250000, 'BELUM LUNAS', NULL),
-(7, 15, '2018-01-10', 'Januari 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(8, 15, '2018-02-10', 'Februari 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(9, 15, '2018-03-10', 'Maret 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(10, 15, '2018-04-10', 'April 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(11, 15, '2018-05-10', 'Mei 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(12, 15, '2018-06-10', 'Juni 2018', 250000, 250000, 'BELUM LUNAS', NULL),
-(13, 16, '2020-07-30', 'Juli 2020', 350000, 0, 'LUNAS', NULL),
-(14, 16, '2020-08-30', 'Agustus 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(15, 16, '2020-09-30', 'September 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(16, 16, '2020-10-30', 'Oktober 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(17, 16, '2020-11-30', 'November 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(18, 16, '2020-12-30', 'Desember 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(19, 16, '2021-01-30', 'Januari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(20, 16, '2021-03-02', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(21, 16, '2021-03-30', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(22, 16, '2021-04-30', 'April 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(23, 16, '2021-05-30', 'Mei 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(24, 16, '2021-06-30', 'Juni 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(61, 20, '2020-12-20', 'Desember 2020', 350000, 350000, 'BELUM LUNAS', NULL),
-(62, 20, '2021-01-19', 'Januari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(63, 20, '2021-02-18', 'Februari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(64, 20, '2021-03-20', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(65, 20, '2021-04-19', 'April 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(66, 20, '2021-05-19', 'Mei 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(67, 20, '2021-06-18', 'Juni 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(68, 20, '2021-07-18', 'Juli 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(69, 20, '2021-08-17', 'Agustus 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(70, 20, '2021-09-16', 'September 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(71, 20, '2021-10-16', 'Oktober 2021', 350000, 350000, 'BELUM LUNAS', NULL),
-(72, 20, '2021-11-15', 'November 2021', 350000, 350000, 'BELUM LUNAS', NULL);
+(73, 21, '2021-01-20', 'Januari 2021', 350000, 0, 'LUNAS', NULL),
+(74, 21, '2021-02-19', 'Februari 2021', 350000, 150000, 'BELUM LUNAS', NULL),
+(75, 21, '2021-03-21', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(76, 21, '2021-04-20', 'April 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(77, 21, '2021-05-20', 'Mei 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(78, 21, '2021-06-19', 'Juni 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(79, 21, '2021-07-19', 'Juli 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(80, 21, '2021-08-18', 'Agustus 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(81, 21, '2021-09-17', 'September 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(82, 21, '2021-10-17', 'Oktober 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(83, 21, '2021-11-16', 'November 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(84, 21, '2021-12-16', 'Desember 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(85, 22, '2021-01-20', 'Januari 2021', 350000, 250000, 'BELUM LUNAS', NULL),
+(86, 22, '2021-02-19', 'Februari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(87, 22, '2021-03-21', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(88, 22, '2021-04-20', 'April 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(89, 22, '2021-05-20', 'Mei 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(90, 22, '2021-06-19', 'Juni 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(91, 22, '2021-07-19', 'Juli 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(92, 22, '2021-08-18', 'Agustus 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(93, 22, '2021-09-17', 'September 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(94, 22, '2021-10-17', 'Oktober 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(95, 22, '2021-11-16', 'November 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(96, 22, '2021-12-16', 'Desember 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(97, 23, '2021-01-20', 'Januari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(98, 23, '2021-02-20', 'Februari 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(99, 23, '2021-03-20', 'Maret 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(100, 23, '2021-04-20', 'April 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(101, 23, '2021-05-20', 'Mei 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(102, 23, '2021-06-20', 'Juni 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(103, 23, '2021-07-20', 'Juli 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(104, 23, '2021-08-20', 'Agustus 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(105, 23, '2021-09-20', 'September 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(106, 23, '2021-10-20', 'Oktober 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(107, 23, '2021-11-20', 'November 2021', 350000, 350000, 'BELUM LUNAS', NULL),
+(108, 23, '2021-12-20', 'Desember 2021', 350000, 350000, 'BELUM LUNAS', NULL);
 
 -- --------------------------------------------------------
 
@@ -216,7 +207,7 @@ CREATE TABLE `tajar` (
 
 INSERT INTO `tajar` (`idtahunajaran`, `tahunajaran`) VALUES
 (1, '2020/2021 Ganjil'),
-(5, '2020/2021 Genap');
+(2, '2020/2021 Genap');
 
 -- --------------------------------------------------------
 
@@ -259,7 +250,7 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `bayar`
   ADD PRIMARY KEY (`idbayar`),
-  ADD KEY `idspp` (`idspp`);
+  ADD KEY `bayar_ibfk_1` (`idspp`);
 
 --
 -- Indexes for table `guru`
@@ -272,7 +263,8 @@ ALTER TABLE `guru`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`idsiswa`),
-  ADD KEY `fk_kelas` (`kelas`);
+  ADD KEY `fk_kelas` (`kelas`),
+  ADD KEY `fk_tajar` (`tahunajaran`);
 
 --
 -- Indexes for table `spp`
@@ -316,7 +308,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bayar`
 --
 ALTER TABLE `bayar`
-  MODIFY `idbayar` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idbayar` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `guru`
@@ -328,19 +320,19 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `idsiswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idsiswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `idspp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `idspp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `tabungan`
 --
 ALTER TABLE `tabungan`
-  MODIFY `idtabungan` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtabungan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tajar`
@@ -356,13 +348,14 @@ ALTER TABLE `tajar`
 -- Constraints for table `bayar`
 --
 ALTER TABLE `bayar`
-  ADD CONSTRAINT `bayar_ibfk_1` FOREIGN KEY (`idspp`) REFERENCES `spp` (`idspp`);
+  ADD CONSTRAINT `bayar_ibfk_1` FOREIGN KEY (`idspp`) REFERENCES `spp` (`idspp`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `siswa`
 --
 ALTER TABLE `siswa`
-  ADD CONSTRAINT `fk_kelas` FOREIGN KEY (`kelas`) REFERENCES `walikelas` (`kelas`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_kelas` FOREIGN KEY (`kelas`) REFERENCES `walikelas` (`kelas`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tajar` FOREIGN KEY (`tahunajaran`) REFERENCES `tajar` (`idtahunajaran`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `spp`

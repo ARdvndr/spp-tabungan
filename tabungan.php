@@ -36,6 +36,13 @@
           <div class="card-body">
             <table class="table table-sm table-borderless" id="biodata_siswa"></table>
           </div>
+
+          <div class="card-footer text-right" style="display: none;" id="cetak">
+            <form action="cetak_tabungan.php" method="post" target="_blank">
+              <input type="hidden" name="nis" id="nis">
+              <input type="submit" class="btn btn-primary" value="Cetak">
+            </form>
+          </div>
         </div>
       </div>
 
@@ -43,23 +50,11 @@
         <div class="card mb-3" style="width: 100%;">
           <div class="card-header d-flex justify-content-between">
             <h3 class="col-auto">Riwayat Tabungan Siswa</h3>
-            <button
-              class="btn btn-success btn-sm"
-              style="display: none;"
-              id="tambah_tabungan"
-              data-bs-toggle='modal'
-              data-bs-target='#modal_tambah'
-            >
+            <button class="btn btn-success btn-sm" style="display: none;" id="tambah_tabungan" data-bs-toggle='modal' data-bs-target='#modal_tambah'>
               Tambah tabungan
             </button>
 
-            <button
-              class="btn btn-warning btn-sm"
-              style="display: none;"
-              id="ambil_tabungan"
-              data-bs-toggle='modal'
-              data-bs-target='#modal_ambil'
-            >
+            <button class="btn btn-warning btn-sm" style="display: none;" id="ambil_tabungan" data-bs-toggle='modal' data-bs-target='#modal_ambil'>
               Ambil Tabungan
             </button>
           </div>
